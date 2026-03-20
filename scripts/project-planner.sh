@@ -55,6 +55,8 @@ for item in data.get("items", []):
         continue
     if content.get("type") != "Issue":
         continue
+    if content.get("title", "").startswith("plan:"):
+        continue
 
     results.append({
         "number": content["number"],
